@@ -1,0 +1,28 @@
+{
+    "name": "mouf/javascript.fileuploader",
+    "description": "This package contains functions to upload file in Ajax or HTML5.",
+    "keywords": ["javascript", "file", "uploader"],
+    "homepage": "http://mouf-php.com",
+    "type": "mouf-library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "David Négrier",
+            "email": "d.negrier@thecodingmachine.com",
+            "homepage": "http://mouf-php.com"
+        }
+    ],
+    "require": {
+    	"php": ">=5.3.0",
+		"mouf/html.utils.weblibrarymanager": ">=2.0-dev,<3.0"
+    },
+    "minimum-stability": "dev",
+    "extra": {
+	    "mouf": {
+	    	"install": [{
+	    		"type" : "file",
+	    		"file" : "install.php"
+	    	}]
+	    }
+	}
+}
