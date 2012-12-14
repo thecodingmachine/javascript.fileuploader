@@ -5,7 +5,7 @@ use Mouf\Actions\InstallUtils;
 use Mouf\MoufManager;
 
 // Let's init Mouf
-InstallUtil::init(InstallUtils::$INIT_APP);
+InstallUtils::init(InstallUtils::$INIT_APP);
 
 // Let's create the instance
 $moufManager = MoufManager::getMoufManager();
@@ -13,7 +13,7 @@ $moufManager = MoufManager::getMoufManager();
 if ($moufManager->instanceExists("fileUploaderLibrary")) {
 	$fileUploaderLib = $moufManager->getInstanceDescriptor("fileUploaderLibrary");
 } else {
-	$fileUploaderLib = $moufManager->createInstance("WebLibrary");
+	$fileUploaderLib = $moufManager->createInstance("Mouf\\Html\\Utils\\WebLibraryManager\\WebLibrary");
 	$fileUploaderLib->setName("fileUploaderLibrary");
 }
 $fileUploaderLib->getProperty("jsFiles")->setValue(array(
