@@ -267,6 +267,11 @@ qq.FileUploaderBasic = function(o){
         onProgress: function(id, fileName, loaded, total){},
         onComplete: function(id, fileName, responseJSON){},
         onCancel: function(id, fileName){},
+        // texts
+        textDefault: 'Add document',
+        textHover: 'Drop document here',
+        textCancel: 'Cancel',
+        textFailed: 'Failed',
         // messages                
         messages: {
             typeError: "{file} has invalid extension. Only {extensions} are allowed.",
@@ -485,8 +490,8 @@ qq.FileUploader = function(o){
         listElement: null,
                 
         template: '<div class="qq-uploader">' + 
-                '<div class="qq-upload-drop-area"><span>Déposer le document ici</span></div>' +
-                '<div class="qq-upload-button">Add file</div>' +
+                '<div class="qq-upload-drop-area"><span>'+this._options.textHover+'</span></div>' +
+                '<div class="qq-upload-button">'+this._options.textDefault+'</div>' +
                 '<ul class="qq-upload-list"></ul>' + 
              '</div>',
 
@@ -495,8 +500,8 @@ qq.FileUploader = function(o){
                 '<span class="qq-upload-file"></span>' +
                 '<span class="qq-upload-spinner"></span>' +
                 '<span class="qq-upload-size"></span>' +
-                '<a class="qq-upload-cancel" href="#">Cancel</a>' +
-                '<span class="qq-upload-failed-text">Failed</span>' +
+                '<a class="qq-upload-cancel" href="#">'+this._options.textCancel+'</a>' +
+                '<span class="qq-upload-failed-text">'+this._options.textFailed+'</span>' +
             '</li>',        
         
         classes: {
