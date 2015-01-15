@@ -22,9 +22,10 @@ $fileUploaderLib->getProperty("jsFiles")->setValue(array(
 $fileUploaderLib->getProperty("cssFiles")->setValue(array(
 	'vendor/mouf/javascript.fileuploader/fileuploader.css'
 ));
-$renderer = $moufManager->getInstanceDescriptor('defaultWebLibraryRenderer');
-$fileUploaderLib->getProperty("renderer")->setValue($renderer);
-
+if ($moufManager->has('defaultWebLibraryRenderer')) {
+	$renderer = $moufManager->getInstanceDescriptor('defaultWebLibraryRenderer');
+	$fileUploaderLib->getProperty("renderer")->setValue($renderer);
+}
 $webLibraryManager = $moufManager->getInstanceDescriptor('defaultWebLibraryManager');
 if ($webLibraryManager) {
 	$libraries = $webLibraryManager->getProperty("webLibraries")->getValue();
